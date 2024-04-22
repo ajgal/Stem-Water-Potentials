@@ -11,8 +11,8 @@ library(readxl)
 swp <- read_xlsx("SWP_04192024.xlsx") # read excel file with data; change file name to choose sampling date.
 swp <- as.data.frame(swp) # convert excel file to a data frame
 
-baseline_DRI <- -6.3 # change these values based on the air temp and relative humidity conditions at the time of sampling
-baseline_drip <- -6.1
+baseline_DRI <- -6.3 # change these values (unit = bars) based on the air temp and relative humidity conditions at the time of sampling (see table in Google Drive)
+baseline_drip <- -6.1 
 
 swp_plot <- ggplot(swp, aes(x = block, y = reading_bar, color = block)) +
               geom_jitter(show.legend = FALSE, width = 0.1, size = 3) + #jitterplot in ggplot2
